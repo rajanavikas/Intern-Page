@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentServe</title>
+    <style>
+    * {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+html,
+body {
+	background-color:#f3f7ff;
+	color:#1D2F6F;
+	text-rendering:optimizeLegibility;
+	font-size:16px;
+	font-family: 'Poppins', sans-serif;
+}
+.intern_main{
+    width:85%;
+    margin:50px auto;
+    /* border-style: solid; */
+}
+.intern_details{
+    /* border-style: solid; */
+    width: 100%;
+}
+.i_det{
+    /* border-style: solid; */
+    font-size: 24px;
+    font-weight: 600;
+    margin: 40px 0;
+}
+.i_det_txt{
+    width:35%;
+    display: inline-block;
+    margin-top: 10px;
+    vertical-align:top;
+    /* border-style: solid; */
+
+
+}
+.i_det_inp{
+    width:55%;
+    display: inline-block;
+    /* border-style: solid; */
+
+}
+.inp{
+    width:100%;
+    height: 45px;
+    background: #FFFFFF;
+    border-style: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    padding-left: 2%;
+    color: #1D2F6F;
+    font-size: 18px;
+  font-weight: 600;
+  outline: none;
+}
+.inp_gender{
+    width: 30%;
+    height: 45px;
+    background: #FFFFFF;
+    border-style: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding-left: 2%;
+    font-size:16px;
+    font-weight: 600;
+    color:#1D2F6F;
+}
+.inp_add{
+    width: 30%;
+    height: 45px;
+    background: #FFFFFF;
+    border-style: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding-left: 2%;
+    font-size:16px;
+    font-weight: 600;
+    color:#1D2F6F;
+}
+::placeholder {
+  font-size: 14px;
+  font-weight: 600;
+}
+textarea {
+    padding-top:1% ;
+}
+.gen_inter{
+    font-size:15px;
+    font-weight: 600;
+    color:#1D2F6F;
+    margin-top: 10px;
+}
+.i_btn{
+    width:95%;
+    margin: 50px auto;
+}
+.i_edit, .i_next{
+    background-color:#1D2F6F;
+    color: #FFFFFF;
+    width:150px;
+    height:40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.i_next{
+    float:right;
+}
+.i_opt{
+    display: inline-block;
+    vertical-align:top;
+    font-size:16px;
+    margin-top: 10px;
+}
+.i_upld{
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;  
+
+}
+.i_up_txt{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center
+}
+.i_upl_img{
+margin-top: 40%;
+
+}
+.intern_upload{
+    grid-area: pic;
+    margin-top: 50px;
+}
+.intern_details{
+    grid-area: form;
+
+}
+.intern_main{
+    display: grid;
+	grid-template-columns: 11fr  2fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+	"form pic";
+}
+p{
+    width:100%;
+}
+@media screen and (max-width: 1367px){
+    .intern_main{
+    display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+	"pic"
+    "form";
+}
+.intern_upload{
+    margin: 0 auto;
+}
+.i_opt{
+    display: block;
+    float: right;
+    margin-right: 1.5%;
+}
+.i_det_inp{
+    width:63%;
+}
+}
+.i_add_txt{
+    font-size:16px;
+}
+.i_hobby{
+    width:100%;
+    display: inline-block;
+    display:flex;
+    justify-content:space-between;
+}
+.i_sub_hobby{
+    width:30%;
+    display: inline-block;
+}
+@media screen and (max-width:767px) {
+    .intern_main{
+        width:95%;
+    }
+    .i_edit, .i_next{
+        width:100px;
+    }
+    .i_det, .i_up_txt{
+        font-size: 20px;
+    }
+    .inp_gender{
+        width: 40%;
+        font-size:14px;
+    }
+    .inp{
+        font-size:14px;
+    }
+    .i_opt{
+        font-size:14px;
+    }
+    .i_upld{
+    width:150px;
+    height:150px;
+    }
+    textarea{
+        height:80px !important;
+    }
+    .i_det{
+        margin: 30px 0;
+    }
+}
+@media screen and (max-width:684px) {
+    .i_add_txt{
+        font-size:14px;
+    }
+}
+@media screen and (max-width:614px) {
+    ::placeholder {
+    font-size: 10px;
+    }
+    .inp{
+        height:30px;
+    }
+    .i_det, .i_up_txt{
+        font-size: 18px;
+    }
+    .inp_gender,.inp{
+        font-size:12px;
+    }
+    .i_det{
+        margin: 20px 0;
+    }
+}
+@media screen and (max-width:584px) {
+    .i_add_txt{
+        font-size:12px;
+    }
+}
+@media screen and (max-width:511px) {
+    .i_det , .i_up_txt{
+        font-size: 16px;
+    }
+    .i_edit, .i_next{
+    width:100px;
+    height:35px;
+    font-size: 14px;
+
+}
+.i_opt{
+        font-size:11px;
+    }
+    .i_add_txt, .i_add_inp{
+        display: block !important;
+    }
+    .i_add_inp{
+        width:85% !important;
+    }
+    .i_add_inp{
+        margin-top:7px;
+    }
+    .i_add_1{
+        margin-bottom: 15px !important;
+    }
+    .i_hobby_2{
+        margin-top: 15px !important;
+    }
+
+}
+@media screen and (max-width:453px) {
+    .i_det, .i_up_txt{
+        font-size: 14px;
+    }
+    ::placeholder {
+        font-size: 8px;
+    }
+    .i_edit, .i_next{
+    width:100px;
+    height:35px;
+    font-size: 14px;
+
+}
+.i_upld{
+    width:120px;
+    height:120px;
+    }
+    textarea{
+        height:60px !important;
+    }
+}
+@media screen and (max-width:398px) {
+    .i_det, .i_up_txt{
+        font-size: 12px;
+    }
+    .inp_gender, .inp{
+        font-size:10px;
+    }
+    .i_edit, .i_next{
+    width:80px;
+    height:35px;
+    font-size: 14px;
+
+}
+.i_add_txt{
+        font-size:10px;
+    }
+.i_opt{
+        font-size:9px;
+    }
+}
+@media screen and (max-width:352px) {
+    .i_det , .i_up_txt{
+        font-size: 11px;
+    }
+    ::placeholder {
+        font-size: 7px;
+    }
+    .i_edit, .i_next{
+    width:70px;
+    height:32px;
+    font-size: 14px;
+
+}
+
+}
+    </style>
+</head>
+<body>
+<form>
+   <div class="intern_main">
+            <div class="intern_upload">
+                <label for="image">
+                <div class="i_upld">
+
+                 
+                        <input type="file" name="image" id="image" style="display:none;"/>
+                        <img  src="upload.png"  style="align-content: center; margin-top:42%;"/>
+
+                </div>
+            </label>
+                <div class="i_up_txt">
+                    <p>Upload Picture</p>
+                </div>
+            </div>
+            <div class="intern_details">
+
+
+                <div class="i_det">
+                    <div class="i_det_txt">
+                        <p>Name</p>
+                    </div>
+                    <div class="i_det_inp">
+                        <input type="text" class="inp" placeholder="Full Name" required>
+                    </div>
+                </div>
+
+                <div class="i_det">
+                    <div class="i_det_txt">
+                        <p>Phone Number</p>
+                    </div>
+                    <div class="i_det_inp">
+                        <input type="number" class="inp" placeholder="Eg:09876543210" required>
+                    </div>
+                </div>
+
+
+                <div class="i_det">
+                    <div class="i_det_txt">
+                        <p>Email Id</p>
+                    </div>
+                    <div class="i_det_inp">
+                        <input type="email" class="inp" placeholder="Eg:xyz123@gmail.com" required>
+                    </div>
+                </div>
+
+
+                <div class="i_det">
+                    <div class="i_det_txt">
+                        <p>Date of Birth</p>
+                    </div>
+                    <div class="i_det_inp">
+                        <input type="date"  class="inp" required>
+                    </div>
+                </div>
+
+
+                <div class="i_det">
+                    <div class="i_det_txt">
+                        <p>Gender</p>
+                    </div>
+                    <div class="i_det_inp">
+                        <select  class="inp_gender inp" required>
+                            <option style="display: none;" class="gen_inter" selected >Gender</option>
+                            <option class="gen_inter" value="1">Male</option>
+                            <option class="gen_inter" value="2">Female</option>
+                          </select>
+                    </div>
+                </div>
+
+                <div class="i_det">
+                    <div class="i_det_txt">
+                        <p> Permanent Address</p>
+                    </div>
+                    <div class="i_det_inp">
+                        <textarea class="inp" style="height:100px;" required></textarea>
+                    </div>
+                </div>
+
+
+                <div class="i_det" >
+                    <div class="i_det_txt">
+                    </div>
+                    <div class="i_det_inp">
+                        <div class="i_add_1" style="margin-bottom:30px; display: flex; justify-content:space-between;">
+                            <div class="i_city" style="display:inline-block; width: 48%;">
+                                <div class="i_add_txt" style="display:inline-block; width: 27%;">
+                                    <p>City</p>
+                                </div>
+                                <div class="i_add_inp" style="display:inline-block;width: 67%;">
+                                    <input type="text" style="width:95%;" class="inp_add inp" required>
+                                </div>
+                            </div>
+                            <div class="i_state" style="display:inline-block; width: 48%;">
+                                <div class="i_add_txt" style="display:inline-block;width: 27%;">
+                                    <p>State</p>
+                                </div>
+                                <div class="i_add_inp" style="display:inline-block;width: 67%;">
+                                    <select  class="inp_add inp" style="width:95%;" required>
+                                        <option style="display: none;" class="state_inter" selected ></option>
+                                        <option class="state_inter" value="1">1</option>
+                                        <option class="state_inter" value="2">2</option>
+                                        <option class="state_inter" value="2">3</option>
+                                        <option class="state_inter" value="2">4</option>
+                                        <option class="state_inter" value="2">5</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="i_add_2" style="width: 53%;">
+                            <div class="i_add_txt" style="display:inline-block;width: 26%; ">
+                                <p>Pincode</p>
+                            </div>
+                            <div class="i_add_inp" style="display:inline-block;width: 60%; ">
+                                <input type="number" style="width:95%;" class="inp_add inp" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="i_det">
+                    <div class="i_det_txt">
+                        <p>Hobby</p>
+                    </div>
+                    <div class="i_det_inp">
+                        <div class="i_hobby">
+                            <div class="i_sub_hobby" >
+                                <input type="text" class="inp" placeholder="Hobby 1">
+                            </div>
+                            <div class="i_sub_hobby" >
+                                <input type="text" class="inp" placeholder="Hobby 2">
+                            </div>
+                            <div class="i_sub_hobby" >
+                                <input type="text" class="inp" placeholder="Hobby 3">
+                            </div>
+                        </div>
+                        <div class="i_hobby i_hobby_2" style="margin-top:30px;">
+                            <div class="i_sub_hobby" >
+                                <input type="text" class="inp" placeholder="Hobby 4">
+                            </div>
+                            <div class="i_sub_hobby" >
+                                <input type="text" class="inp" placeholder="Hobby 5">
+                            </div>
+                            <div class="i_sub_hobby" style="visibility:hidden;">
+                                <input type="text" class="inp">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="i_det">
+                    <div class="i_det_txt">
+                        <p> About Myself</p>
+                    </div>
+                    <div class="i_det_inp">
+                        <textarea class="inp" style="height:100px;" placeholder="Bio" required></textarea>
+                    </div>
+                </div>
+
+                <div class="i_det">
+                    <div class="i_det_txt">
+                        <p>College Name</p>
+                    </div>
+                    <div class="i_det_inp">
+                        <input type="text" class="inp" placeholder="Eg:Veda Institute of Business Management" required>
+                    </div>
+                </div>
+
+
+                <div class="i_det">
+                    <div class="i_det_txt">
+                        <p>College Website</p>
+                    </div>
+                    <div class="i_det_inp">
+                        <input type="text" class="inp" placeholder="Eg:www.Veda Institute of Business Management.com" >
+                    </div>
+                    <div class="i_opt">
+                        <p>(Optional)</p>
+                    </div>
+                </div>
+
+
+                <div class="i_det" style="margin-top:30px;">
+                    <div class="i_det_txt">
+                        <p >College Contact No</p>
+                    </div>
+                    <div class="i_det_inp">
+                        <input type="number" class="inp" placeholder="Eg:09876543210" required>
+                    </div>
+                </div>
+
+
+                <div class="i_det">
+                    <div class="i_det_txt">
+                        <p>College Address</p>
+                    </div>
+                    <div class="i_det_inp">
+                        <textarea class="inp" style="height:100px;"></textarea>
+                    </div>
+                    <div class="i_opt">
+                        <p>(Optional)</p>
+                    </div>
+                </div>
+
+                
+
+            </div>
+
+            <div class="i_btn">
+                <button type="button" class="i_edit">Edit</button>
+                <button type="button" class="i_next">Next</button>
+
+            </div>
+   </div>
+</form>
+</body>
+</html>
